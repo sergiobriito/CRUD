@@ -19,7 +19,7 @@ const AddEdit = () => {
     const {id} = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/get/${id}`).then((resp) => setState({...resp.data[0]}))
+        axios.get(`https://crud-her3.onrender.com/api/get/${id}`).then((resp) => setState({...resp.data[0]}))
     }, [id]);
 
     const handleSubmit = (e) => {
@@ -28,7 +28,7 @@ const AddEdit = () => {
             toast.error("Favor preencher todos os campos");
         } else {
             if(!id){
-                axios.post("http://localhost:5000/api/post", {
+                axios.post("https://crud-her3.onrender.com/api/post", {
                 nome,
                 email,
                 telefone,
@@ -39,7 +39,7 @@ const AddEdit = () => {
             toast.success("Usuário adicionado com sucesso");
             setTimeout(() => navigate("/"), 500);
             }else{
-                axios.put(`http://localhost:5000/api/update/${id}`, {
+                axios.put(`https://crud-her3.onrender.com/api/update/${id}`, {
                 nome,
                 email,
                 telefone,

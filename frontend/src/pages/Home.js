@@ -8,7 +8,7 @@ const Home = () => {
     const navigate = useNavigate();
     const [data, setData] = useState([]);
     const loadData = async () => {
-        const response = await axios.get("http://localhost:5000/api/get");
+        const response = await axios.get("https://crud-her3.onrender.com/api/get");
         setData(response.data);
     };
 
@@ -21,7 +21,7 @@ const Home = () => {
         if(
             window.confirm("Tem certeza que deseja remover o usuário ?")
         ){
-            axios.delete(`http://localhost:5000/api/remove/${id}`);
+            axios.delete(`https://crud-her3.onrender.com/api/remove/${id}`);
             toast.success("Usuário removido com sucesso");
             setTimeout(() => loadData(), 500);
         }
